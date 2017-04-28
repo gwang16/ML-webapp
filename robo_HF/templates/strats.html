@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    strats
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('strats') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">strategy1</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
