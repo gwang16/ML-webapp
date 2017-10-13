@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <form action="{{ url_for('strats') }}" method="post">
+    <form action="{{ url_for('reload_data') }}" method="post">
         <fieldset>
             <div class="form-group">
-                <button class="btn btn-default" type="submit">Execute Alpha 1</button>
+                <button class="btn btn-default" type="submit">pull sp500</button>
             </div>
         </fieldset>
     </form>

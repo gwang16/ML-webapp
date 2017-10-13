@@ -7,6 +7,8 @@ import os
 import numpy as np
 
 # import HashingVectorizer from local dir
+import sys
+sys.path.insert(0, './2.model/')
 from vectorizer import vect
 from update import update_model
 
@@ -15,9 +17,9 @@ app = Flask(__name__)
 ######## Preparing the Classifier
 cur_dir = os.path.dirname(__file__)
 clf = pickle.load(open(os.path.join(cur_dir,
-                 'pkl_objects',
+                 '2.model/pkl_objects',
                  'classifier.pkl'), 'rb'))
-db = os.path.join(cur_dir, 'reviews.sqlite')
+db = os.path.join(cur_dir, '3.db/reviews.sqlite')
 
 def classify(document):
     label = {0: 'negative', 1: 'positive'}

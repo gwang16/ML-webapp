@@ -11,7 +11,7 @@ def update_model(db_path, model, batch_size=10000):
 
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
-    c.execute('SELECT * from review_db')
+    c.execute("SELECT * from review_db")
 
     results = c.fetchmany(batch_size)
     while results:
@@ -32,7 +32,7 @@ cur_dir = os.path.dirname(__file__)
 clf = pickle.load(open(os.path.join(cur_dir,
                   'pkl_objects',
                   'classifier.pkl'), 'rb'))
-db = os.path.join(cur_dir, 'reviews.sqlite')
+db = os.path.join(cur_dir, '../3.db/reviews.sqlite')
 
 clf = update_model(db_path=db, model=clf, batch_size=10000)
 
